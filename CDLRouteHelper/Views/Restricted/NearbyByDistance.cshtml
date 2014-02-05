@@ -1,0 +1,46 @@
+﻿@model CDLRouteHelper.Models.NearbyViewModel
+
+@{
+    ViewBag.Title = "NearbyByDistance";
+}
+
+<h2>NearbyByDistance</h2>
+
+@* Google maps start *@
+<style type="text/css">
+    #map-canvas5 {
+        height: 500px; /*not %*/
+    }
+</style>
+
+<script type="text/javascript">
+
+    function initialize() {
+
+        var mapOptions = {
+            center: new google.maps.LatLng(43.0747337341309, -78.5886383056641),
+            zoom: 10,    //zoom 4
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        var map = new google.maps.Map(document.getElementById("map-canvas5"),  mapOptions);
+    
+              @{
+                                              
+              //  foreach (var bridge in Model.Bridges)
+              //  {
+              //       <text>  var marker = new google.maps.Marker({
+               //       position: new google.maps.LatLng(@bridge.Latitude, @bridge.Longitude),
+               //       title: "@bridge.Address1 @bridge.City, @bridge.PostalCode Height = @bridge.Height"  @* + 'Height = ' + @bridge.Height + ' ' + 'Weight = ' + @bridge.WeightStraight + ' ' + @bridge.WeightSingle + @bridge.WeightDouble"*@
+               //      });
+
+              //       marker.setMap(map);
+              //       </text>   
+                }
+              }
+      
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+@* Google maps stop  *@

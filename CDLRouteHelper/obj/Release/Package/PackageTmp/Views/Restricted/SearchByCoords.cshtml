@@ -1,0 +1,39 @@
+﻿@model CDLRouteHelper.Models.RetrieveViewModel
+
+
+@using (@Html.BeginForm("SearchByCoords", "Restricted", FormMethod.Post, null))
+{
+    @Html.ValidationSummary(true, "Please correct the following:")
+  
+    <div class="col-md-6 row" style="background-color: #f9f9f9; border: solid; border-color: #f3f3f3">
+        <div class="page-header">
+            <h1>Find Bridges By Distance <small>starting from latitude and longitude </small> </h1>
+        </div>
+        <div style="margin-top: 20px" class="well">
+            <div>
+                @Html.ValidationMessageFor(c => c.Latitude)
+
+            </div>
+            <div>
+                @Html.LabelFor(c => c.Latitude)
+                @Html.TextBoxFor(c => c.Latitude)
+            </div>
+        </div>
+        <div style="margin-top: 10px" class="well">
+            <div>
+                <div>@Html.ValidationMessageFor(c => c.Longitude) </div>
+
+            </div>
+            <div>
+                @Html.LabelFor(c => c.Longitude)
+                @Html.TextBoxFor(c => c.Longitude)
+            </div>
+        </div>
+
+        <div style="margin: 20px; text-align: center">
+            <button class="btn btn-primary btn-lg" type="submit">Search</button>
+        </div>
+
+    </div>
+      
+}

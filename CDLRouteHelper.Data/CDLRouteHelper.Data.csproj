@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F776AA43-7C40-4C8B-BFA8-CBB434A986E3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CDLRouteHelper.Data</RootNamespace>
+    <AssemblyName>CDLRouteHelper.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CDLContext.cs" />
+    <Compile Include="Migrations\201309210837034_initial.cs" />
+    <Compile Include="Migrations\201309210837034_initial.Designer.cs">
+      <DependentUpon>201309210837034_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201309231807180_addWeightTableAndTruckTypeEnum.cs" />
+    <Compile Include="Migrations\201309231807180_addWeightTableAndTruckTypeEnum.Designer.cs">
+      <DependentUpon>201309231807180_addWeightTableAndTruckTypeEnum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201309231826125_moveWeightFieldFromBridgetoWeight.cs" />
+    <Compile Include="Migrations\201309231826125_moveWeightFieldFromBridgetoWeight.Designer.cs">
+      <DependentUpon>201309231826125_moveWeightFieldFromBridgetoWeight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201309241914563_removeLocation_AddToBridge.cs" />
+    <Compile Include="Migrations\201309241914563_removeLocation_AddToBridge.Designer.cs">
+      <DependentUpon>201309241914563_removeLocation_AddToBridge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201309241922546_User_toUserAddressLookup.cs" />
+    <Compile Include="Migrations\201309241922546_User_toUserAddressLookup.Designer.cs">
+      <DependentUpon>201309241922546_User_toUserAddressLookup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201309260310308_AddGUIDToBridge.cs" />
+    <Compile Include="Migrations\201309260310308_AddGUIDToBridge.Designer.cs">
+      <DependentUpon>201309260310308_AddGUIDToBridge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201309271456276_Change_Lat_LongFromFloat_toDouble.cs" />
+    <Compile Include="Migrations\201309271456276_Change_Lat_LongFromFloat_toDouble.Designer.cs">
+      <DependentUpon>201309271456276_Change_Lat_LongFromFloat_toDouble.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201310032045224_userRoles.cs" />
+    <Compile Include="Migrations\201310032045224_userRoles.Designer.cs">
+      <DependentUpon>201310032045224_userRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201310032053516_correct_dbcontext.cs" />
+    <Compile Include="Migrations\201310032053516_correct_dbcontext.Designer.cs">
+      <DependentUpon>201310032053516_correct_dbcontext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201310061924197_removeAddress2fromBridge.cs" />
+    <Compile Include="Migrations\201310061924197_removeAddress2fromBridge.Designer.cs">
+      <DependentUpon>201310061924197_removeAddress2fromBridge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201310071515232_maxweight_nullable.cs" />
+    <Compile Include="Migrations\201310071515232_maxweight_nullable.Designer.cs">
+      <DependentUpon>201310071515232_maxweight_nullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\Seeder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CDLRouteHelper.Data.Model\CDLRouteHelper.Data.Model.csproj">
+      <Project>{37972cab-bdc3-4c0f-a597-f3ceddbac36a}</Project>
+      <Name>CDLRouteHelper.Data.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201309210837034_initial.resx">
+      <DependentUpon>201309210837034_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309231807180_addWeightTableAndTruckTypeEnum.resx">
+      <DependentUpon>201309231807180_addWeightTableAndTruckTypeEnum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309231826125_moveWeightFieldFromBridgetoWeight.resx">
+      <DependentUpon>201309231826125_moveWeightFieldFromBridgetoWeight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309241914563_removeLocation_AddToBridge.resx">
+      <DependentUpon>201309241914563_removeLocation_AddToBridge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309241922546_User_toUserAddressLookup.resx">
+      <DependentUpon>201309241922546_User_toUserAddressLookup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309260310308_AddGUIDToBridge.resx">
+      <DependentUpon>201309260310308_AddGUIDToBridge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309271456276_Change_Lat_LongFromFloat_toDouble.resx">
+      <DependentUpon>201309271456276_Change_Lat_LongFromFloat_toDouble.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201310032045224_userRoles.resx">
+      <DependentUpon>201310032045224_userRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201310032053516_correct_dbcontext.resx">
+      <DependentUpon>201310032053516_correct_dbcontext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201310061924197_removeAddress2fromBridge.resx">
+      <DependentUpon>201310061924197_removeAddress2fromBridge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201310071515232_maxweight_nullable.resx">
+      <DependentUpon>201310071515232_maxweight_nullable.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

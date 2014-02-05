@@ -1,0 +1,82 @@
+﻿@model CDLRouteHelper.Models.CreateViewModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+@using (Html.BeginForm("DeleteByCoords", "Restricted", FormMethod.Post, Model))
+{
+    @Html.HiddenFor(c => c.BridgeId)
+
+    @Html.ValidationSummary(true, "Please correct the following:")
+                                                                  
+    <div class="col-md-6 row" style="background-color: #f9f9f9; border: solid; border-color: #f3f3f3">
+        <div class="page-header">
+            <h1>Delete Record</h1>
+        </div>
+
+        <div style="margin-top: 20px" class="well">
+            <div>
+                @Html.LabelFor(c => c.Latitude)
+                <h5>@Html.DisplayFor(c => c.Latitude) </h5>
+            </div>
+        </div>
+        <div class="well">
+            <div>
+                @Html.LabelFor(c => c.Longitude)
+                <h5>@Html.DisplayFor(c => c.Longitude) </h5>
+            </div>
+        </div>
+        <div class="well">
+            <div>
+                @Html.LabelFor(c => c.Address1)
+                <h5>@Html.DisplayFor(c => c.Address1) </h5>
+            </div>
+        </div>
+        <div class="well">
+            <div>
+                @Html.LabelFor(m => m.City)
+                <h5>@Html.DisplayFor(m => m.City) </h5>
+            </div>
+        </div>
+
+        <div class="well">
+            <div>
+                @Html.LabelFor(m => m.State)
+                <h5>@Html.DisplayFor(m => m.State) </h5>
+            </div>
+        </div>
+
+        <div class="well">
+            <div>
+                @Html.LabelFor(c => c.PostalCode)
+                <h5>@Html.DisplayFor(c => c.PostalCode) </h5>
+            </div>
+        </div>
+        <div class="well">
+            @Html.LabelFor(c => c.Height)
+            <h5>@Html.DisplayFor(c => c.Height) </h5>
+        </div>
+
+        <div class="well">
+            @Html.LabelFor(c => c.WeightStraight)
+            <h5>@Html.DisplayFor(c => c.WeightStraight)</h5>
+        </div>
+
+        <div class="well">
+            @Html.LabelFor(c => c.WeightSingle)
+            <h5>@Html.DisplayFor(c => c.WeightSingle)</h5>
+        </div>
+
+        <div class="well">
+            @Html.LabelFor(c => c.WeightDouble)
+            <h5>@Html.DisplayFor(c => c.WeightDouble)</h5>
+        </div>
+
+        <div style="margin: 20px; text-align: center">
+            <button class="btn btn-primary btn-lg" type="submit">Delete </button>
+        </div>
+
+    </div>  
+ 
+}

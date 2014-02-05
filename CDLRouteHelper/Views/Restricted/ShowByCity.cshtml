@@ -1,0 +1,30 @@
+﻿@model CDLRouteHelper.Models.DisplayRestrictedViewModel
+
+@{
+    ViewBag.Title = "ShowByCity";
+}
+
+<h2>Results by City</h2>
+
+@foreach (var bridge in Model.Bridges)
+{
+  
+
+    
+    <div style="text-align: center; margin: 10px; background-color: #f9f9f9; border: solid; border-color: #f3f3f3" class="col-md-5 row">
+
+        <h5 style="color: red">Latitude = @bridge.Latitude </h5>
+        <h5 style="color: red">Longitude = @bridge.Longitude </h5>
+
+        <a href='@Url.Action("UpdateByCity", "Restricted", new { lat = bridge.Latitude, lon = bridge.Longitude })'>
+
+            <div class="well">
+                <p style="font: bold">@bridge.Address1 </p>
+                <p>@bridge.City, @bridge.State.Name </p>
+
+                <img src="http://maps.googleapis.com/maps/api/staticmap?center=@bridge.Latitude,@bridge.Longitude&zoom=12&size=200x200&markers=color:blue|@bridge.Latitude,@bridge.Longitude&sensor=false">
+            </div>
+        </a>
+    </div>
+
+}

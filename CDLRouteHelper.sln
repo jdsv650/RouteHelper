@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Web
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDLRouteHelper", "CDLRouteHelper\CDLRouteHelper.csproj", "{EC1C2AB5-5ED5-45AD-B26D-40569B6A984D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDLRouteHelper.Tests", "CDLRouteHelper.Tests\CDLRouteHelper.Tests.csproj", "{C09A1A08-F9D8-4E71-BC27-FD49BA3B9572}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDLRouteHelper.Data.Model", "CDLRouteHelper.Data.Model\CDLRouteHelper.Data.Model.csproj", "{37972CAB-BDC3-4C0F-A597-F3CEDDBAC36A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDLRouteHelper.Data", "CDLRouteHelper.Data\CDLRouteHelper.Data.csproj", "{F776AA43-7C40-4C8B-BFA8-CBB434A986E3}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://jdsv650.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CDLRouteHelper.Data.Model\\CDLRouteHelper.Data.Model.csproj
+		SccProjectName1 = CDLRouteHelper.Data.Model
+		SccLocalPath1 = CDLRouteHelper.Data.Model
+		SccProjectUniqueName2 = CDLRouteHelper.Data\\CDLRouteHelper.Data.csproj
+		SccProjectName2 = CDLRouteHelper.Data
+		SccLocalPath2 = CDLRouteHelper.Data
+		SccProjectUniqueName3 = CDLRouteHelper.Tests\\CDLRouteHelper.Tests.csproj
+		SccProjectName3 = CDLRouteHelper.Tests
+		SccLocalPath3 = CDLRouteHelper.Tests
+		SccProjectUniqueName4 = CDLRouteHelper\\CDLRouteHelper.csproj
+		SccProjectName4 = CDLRouteHelper
+		SccLocalPath4 = CDLRouteHelper
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC1C2AB5-5ED5-45AD-B26D-40569B6A984D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC1C2AB5-5ED5-45AD-B26D-40569B6A984D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC1C2AB5-5ED5-45AD-B26D-40569B6A984D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC1C2AB5-5ED5-45AD-B26D-40569B6A984D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C09A1A08-F9D8-4E71-BC27-FD49BA3B9572}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C09A1A08-F9D8-4E71-BC27-FD49BA3B9572}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C09A1A08-F9D8-4E71-BC27-FD49BA3B9572}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C09A1A08-F9D8-4E71-BC27-FD49BA3B9572}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37972CAB-BDC3-4C0F-A597-F3CEDDBAC36A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37972CAB-BDC3-4C0F-A597-F3CEDDBAC36A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37972CAB-BDC3-4C0F-A597-F3CEDDBAC36A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37972CAB-BDC3-4C0F-A597-F3CEDDBAC36A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F776AA43-7C40-4C8B-BFA8-CBB434A986E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F776AA43-7C40-4C8B-BFA8-CBB434A986E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F776AA43-7C40-4C8B-BFA8-CBB434A986E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F776AA43-7C40-4C8B-BFA8-CBB434A986E3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

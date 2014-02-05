@@ -1,0 +1,85 @@
+﻿@{
+    ViewBag.Title = "OpenRoad Route Planner";
+}
+@section featured {
+    <section>
+        <div class="content-wrapper" style="border-radius: 10px">
+            <div style="padding-top: 20px; margin-top: 20px">
+                <br />
+                <h1>@ViewBag.Title.</h1>
+
+                <h3>The site features <mark>routing information, maps, and forums</mark> to help you avoid routes with weight and/or height restrictions.
+                If you have any questions please check
+                <a href="http://forums.asp.net/1146.aspx/1?MVC" title="CDL Route Planner Forums">our forums</a>.
+
+                <br />
+                </h3>
+            </div>
+            <div style="background-color: white; text-align: center">
+                <h2 style="text-align: center">Plan Your Route </h2>
+            </div>
+        </div>
+    </section>
+
+    <div class="row" style="margin-left: 40px; margin-top: 40px">
+        <div class="col-md-8">
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img src="~/Images/bridge_posted_weight.jpg" style="width: 150px; height: 150px; margin-top: 20px" alt="...">
+                        <div class="caption">
+                            <h3 style="text-align: center">Bridges by City </h3>
+                            <h5 style="text-align: center">Using Truck Information</h5>
+                            <div style="text-align: center"><a href='@Url.Action("Index", "Restricted")' class="btn btn-danger">Find</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" style="border-radius: 10px;">
+                    <div class="thumbnail">
+                        <img src="~/Images/bridge_low_clearance.jpg" style="width: 150px; height: 150px; margin-top: 20px" />
+                        <div class="caption">
+                            <h3 style="text-align: center">Bridges Nearby</h3>
+                            <h5 style="text-align: center">Locate All Bridges Close By</h5>
+                            <div style="text-align: center"><a href='@Url.Action("Nearby", "Restricted")' class="btn btn-danger">Find</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" style="border-radius: 10px;">
+                    <div class="thumbnail">
+                        <img src="~/Images/HuronRiverBridge.jpg" style="width: 150px; height: 150px; margin-top: 20px" />
+                        <div class="caption">
+                            <h3 style="text-align: center">Add Bridge</h3>
+                            <h5 style="text-align: center">Enter Bridge Information</h5>
+                            <div style="text-align: center"><a href='@Url.Action("Create", "Restricted")' class="btn btn-danger">Submit</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="content-wrapper well" style="border-radius: 10px; margin-right: 40px">
+                <h3>Getting Started:</h3>
+                <ol class="round">
+                    <li class="one">
+                        <h5>OpenRoad Route Planner lets you search for posted bridges with height and weight restrictions that other commercial vehicle
+                        drivers have encountered in the past.  Please create a new (free) user account in order to start using the site.  
+                        </h5>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+    </div>
+
+}
+
+
+
+
+
+
+
+

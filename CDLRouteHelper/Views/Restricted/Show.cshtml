@@ -1,0 +1,177 @@
+﻿@model CDLRouteHelper.Models.DisplayRestrictedViewModel
+
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>Results </h2>
+
+<style type="text/css">
+    #map-canvas {
+        height: 500px; /*not %*/
+    }
+</style>
+
+<div id="slider"></div>
+<div id="miles">
+    <h4>Miles 50  </h4>
+</div>
+
+<div class="row">
+
+    @* <div class="col-md-1">
+        <div id="slider-vertical" style="height: 200px;"></div>
+    </div>*@
+
+    <div class="col-md-12">
+        <div id="map-canvas"></div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+
+        var lat_Lng = "(43.0747337341309, -78.5886383056641)";
+        var lat = 0;
+        var lon = 0;
+        var currentLocIcon = '/Images/blue-dot.png';
+
+        var markersArray = [];
+
+        function clearOverlays() {
+            for (var i = 0; i < markersArray.length; i++) {
+                markersArray[i].setMap(null);
+            }
+            markersArray = [];
+        }
+
+        var mapOptions = {
+            // center: new google.maps.LatLng(43.0747337341309, -78.5886383056641),
+            zoom: 10,    //zoom 4
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        var map = new google.maps.Map(document.getElementById("map-canvas"),  mapOptions);
+ 
+        var gc = new google.maps.Geocoder();
+        gc.geocode({ 'address': '@Model.City, @Model.State' }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                map.setCenter(results[0].geometry.location);
+          
+                // lat_Lng = results[0].geometry.location;
+                lat = results[0].geometry.location.lat();
+                lon = results[0].geometry.location.lng();   
+                //alert(window.myValue); 
+                
+            } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+        });
+
+        //Do this once only
+
+          @{                                             
+              foreach (var bridge in Model.Bridges)
+              {
+              <text>  var marker = new google.maps.Marker({
+              position: new google.maps.LatLng(@bridge.Latitude, @bridge.Longitude),
+              title: "Location =  @bridge.Address1 \nCity = @bridge.City \nHeight = @bridge.Height \nWeight Straight = @bridge.Weights.ElementAt(0).maxWeight  \nWeight Single = @bridge.Weights.ElementAt(1).maxWeight,  \nWeight Double = @bridge.Weights.ElementAt(2).maxWeight \nLatitude = @bridge.Latitude \nLongitude = @bridge.Longitude"
+          });
+
+          markersArray.push(marker);
+        </text>   
+              }
+          }
+
+      @*  var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(43.0747337341309, -78.5886383056641),
+            title: "@Model.City, @Model.State",
+            icon: currentLocIcon
+        });
+
+        markersArray.push(marker);*@
+
+        for (var i = 0; i < markersArray.length; i++)
+        {
+            markersArray[i].setMap(map);
+        }
+
+        $(function () {
+            $("#slider").slider({
+                value: 0,
+                min: 0,
+                max: 1000,
+                step: 10,
+                slide: function (event, ui) {
+                    $("#miles").text('Miles ' + ui.value);
+                    // ajax call to update markers
+                    var distance = ui.value;
+
+                    //$("#slider").slider("value")  USE ui.value NOT this
+                    
+                    $.ajax({
+                        url: "/Restricted/GetListByAll", type: "POST",                
+                        // data: { latitude: 39.40564, longitude: -105.4907, distance: distance },
+                        data: {  latitude:lat, longitude:lon, height:@Model.Height, weight:@Model.Weight, trucktype:'@ViewBag.trucktype', distance:distance },
+
+                        success: function (data) {
+              
+                            clearOverlays();
+
+                            var marker = new google.maps.Marker({
+                                position: new google.maps.LatLng(lat, lon),
+                                title: "@Model.City, @Model.State",
+                                icon: currentLocIcon
+                             });
+
+                            markersArray.push(marker);
+                         
+                            for (var i in data) {
+                                //alert(data[i]['Latitude'] + ',' + data[i]['Longitude'])
+                                var s = 'Location = ' + data[i]['Location'] + '\nCity = ' + data[i]['City'] + '\nHeight = ' + data[i]['heightRestriction'] + '\nWeight Straight = ' + data[i]['weightStraightTruck'] + '\nWeight Single = ' + data[i]['weightSingleTrailer'] + '\nWeight Double = ' + data[i]['weightDoubleTrailer'] + '\nLatitude = ' + data[i]['Latitude'] + '\nLongitude = ' + data[i]['Longitude'];
+
+                                //alert(s);
+                                var marker = new google.maps.Marker({
+                                    position: new google.maps.LatLng(data[i]['Latitude'], data[i]['Longitude']),
+                                    title: s 
+                                });
+
+                                markersArray.push(marker);
+                            }
+
+                            for (var i = 0; i < markersArray.length; i++) {
+                                markersArray[i].setMap(map);
+
+                            }
+                        }
+                    });
+                    
+                }
+            });
+            //initial
+            $("#miles").text("Miles " + $("#slider").slider("value"));
+
+        });
+
+        @*  $(function() {
+
+            $( "#slider-vertical" ).slider({
+
+                orientation: "vertical",
+                range: "min",
+                min: 0,
+                max: 24,
+                value: @Model.Height,
+                step: 0.1,
+
+                slide: function( event, ui ) {
+                    $( "#amount" ).val( ui.value );
+                }
+            });
+
+            $( "#amount" ).val( $( "#slider-vertical" ).slider( "value" ) );
+        });*@
+
+    </script>
+}
